@@ -1,0 +1,20 @@
+spring:
+  profile: dev
+
+  data:
+    mongodb:
+      uri: mongodb://root:MongoDB2021!@localhost:27017/admin?retryWrites=true&w=majority
+
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+    password: sOmE_sEcUrE_pAsS
+
+server:
+  port: 8080
+  context:
+    path: /api
+
+
