@@ -1,4 +1,4 @@
-package com.cache.test.domain;
+package com.cache.domain;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -17,5 +17,7 @@ public class Customer {
     private String id;
 
     private String name;
+
+    private String email;
 
 }

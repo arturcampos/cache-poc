@@ -1,4 +1,4 @@
-package com.cache.test.dto;
+package com.cache.dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +10,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CustomerDTO {
+
     private String id;
 
     private String name;
+
+    private String email;
 }

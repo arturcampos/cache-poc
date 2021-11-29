@@ -1,6 +1,7 @@
 version: "3.3"
 services:
-  mongo:
+
+  mongo-host:
     image: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -10,8 +11,8 @@ services:
     volumes:
       - "/tmp/MongoDB:/data/db"
     networks:
-      - mongo-compose-network
-  redis:
+      - web-network
+  redis-host:
     image: "redis"
     command: redis-server --requirepass sOmE_sEcUrE_pAsS
     ports:
@@ -22,10 +23,13 @@ services:
     environment:
       - REDIS_REPLICATION_MODE=master
     networks:
-      - node_net
+      - web-network
+  web-host:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - web-network
 
 networks:
-  mongo-compose-network:
-    driver: bridge
-  node_net:
-    driver: bridge
+  web-network: {}

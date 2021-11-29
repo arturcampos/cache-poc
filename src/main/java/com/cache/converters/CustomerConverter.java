@@ -1,7 +1,7 @@
-package com.cache.test.converters;
+package com.cache.converters;
 
-import com.cache.test.domain.Customer;
-import com.cache.test.dto.CustomerDTO;
+import com.cache.dto.CustomerDTO;
+import com.cache.domain.Customer;
 import lombok.experimental.UtilityClass;
 
 import java.util.List;
@@ -14,6 +14,7 @@ public class CustomerConverter {
         return Customer.builder()
                        .id(customer.getId())
                        .name(customer.getName())
+                .email(customer.getEmail())
                        .build();
     }
 
@@ -21,6 +22,7 @@ public class CustomerConverter {
         return CustomerDTO.builder()
                        .id(customer.getId())
                        .name(customer.getName())
+                          .email(customer.getEmail())
                        .build();
     }
 

@@ -1,9 +1,9 @@
-package com.cache.test.resource;
+package com.cache.resource;
 
-import com.cache.test.converters.CustomerConverter;
-import com.cache.test.domain.Customer;
-import com.cache.test.dto.CustomerDTO;
-import com.cache.test.service.CustomerService;
+import com.cache.dto.CustomerDTO;
+import com.cache.converters.CustomerConverter;
+import com.cache.domain.Customer;
+import com.cache.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

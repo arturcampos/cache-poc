@@ -1,6 +1,6 @@
-package com.cache.test.repository;
+package com.cache.repository;
 
-import com.cache.test.domain.Customer;
+import com.cache.domain.Customer;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface CustomerRepository extends MongoRepository<Customer, String> {

@@ -1,7 +1,7 @@
-package com.cache.test.service;
+package com.cache.service;
 
-import com.cache.test.domain.Customer;
-import com.cache.test.repository.CustomerRepository;
+import com.cache.domain.Customer;
+import com.cache.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
