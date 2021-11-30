@@ -4,11 +4,13 @@ spring:
   data:
     mongodb:
       uri: mongodb://root:MongoDB2021!@mongo-host:27017/admin?retryWrites=true&w=majority
+      #uri: mongodb://root:MongoDB2021!@localhost:27017/admin?retryWrites=true&w=majority
 
   cache:
     type: redis
   redis:
     host: redis-host
+    #host: localhost
     port: 6379
     password: sOmE_sEcUrE_pAsS
 
@@ -16,5 +18,9 @@ server:
   port: 8080
   context:
     path: /api
+
+logging:
+  level:
+    org.sringframework.cache: TRACE
 
 

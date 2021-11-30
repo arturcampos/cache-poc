@@ -37,4 +37,14 @@ public class CustomerResource {
     public ResponseEntity<CustomerDTO> findById(@PathVariable String id) {
         return ResponseEntity.ok(CustomerConverter.fromModel(service.findById(id)));
     }
+
+    @DeleteMapping("/customers/{id}")
+    public ResponseEntity<CustomerDTO> deleteById(@PathVariable String id) {
+        return ResponseEntity.ok(CustomerConverter.fromModel(service.deleteById(id)));
+    }
+
+    @PutMapping("/customers/{id}")
+    public ResponseEntity<CustomerDTO> replaceCustomer(@PathVariable String id, @RequestBody CustomerDTO customerDTO) {
+        return ResponseEntity.ok(CustomerConverter.fromModel(service.replace(id, CustomerConverter.toModel(customerDTO))));
+    }
 }
