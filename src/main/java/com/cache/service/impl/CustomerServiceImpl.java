@@ -38,11 +38,10 @@ public class CustomerServiceImpl implements CustomerService {
         if (customer.isPresent()) {
             return customer.get();
         }
-
         throw new NotFoundException();
     }
 
-    @CacheEvict(cacheNames = "customers", allEntries = false, key = "#id")
+    @CacheEvict(cacheNames = "customers", key = "#id")
     public Customer deleteById(String id) {
         Customer customer = null;
         try {

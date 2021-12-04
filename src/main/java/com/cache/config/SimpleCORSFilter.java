@@ -23,6 +23,7 @@ public class SimpleCORSFilter extends OncePerRequestFilter {
         hsr1.addHeader("Access-Control-Allow-Headers",
                 "Authorization, origin, client_id, access_token, content-type, accept, apikey, x-requested-with");
 
+
         fc.doFilter(hsr, hsr1);
     }
 

@@ -1,7 +1,7 @@
 package com.cache.converters;
 
-import com.cache.dto.CustomerDTO;
 import com.cache.domain.Customer;
+import com.cache.dto.CustomerDTO;
 import lombok.experimental.UtilityClass;
 
 import java.util.List;
@@ -14,21 +14,21 @@ public class CustomerConverter {
         return Customer.builder()
                        .id(customer.getId())
                        .name(customer.getName())
-                .email(customer.getEmail())
+                       .email(customer.getEmail())
                        .build();
     }
 
     public static CustomerDTO fromModel(Customer customer) {
         return CustomerDTO.builder()
-                       .id(customer.getId())
-                       .name(customer.getName())
+                          .id(customer.getId())
+                          .name(customer.getName())
                           .email(customer.getEmail())
-                       .build();
+                          .build();
     }
 
-    public static List<CustomerDTO> fromListModel(List<Customer> customers){
+    public static List<CustomerDTO> fromListModel(List<Customer> customers) {
         return customers.stream()
-                 .map(CustomerConverter::fromModel)
-                 .collect(Collectors.toList());
+                        .map(CustomerConverter::fromModel)
+                        .collect(Collectors.toList());
     }
 }
