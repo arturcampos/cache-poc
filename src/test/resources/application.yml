@@ -1,0 +1,19 @@
+spring:
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6370
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+

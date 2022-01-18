@@ -3,6 +3,7 @@ services:
 
   mongo-host:
     image: mongo
+    container_name: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: MongoDB2021!
@@ -25,11 +26,28 @@ services:
     networks:
       - web-network
   web-host:
-    build: .
+    container_name: web-host
+    build:
+      context: .
     ports:
       - "8080:8080"
     networks:
       - web-network
+    depends_on:
+      - mongo-host
+  nginx:
+    build:
+      context: ./nginx
+    image: arturcampos/nginx:latest
+    container_name: nginx
+    networks:
+      - web-network
+    tty: true
+    ports:
+      - 80:80
+    depends_on:
+      - web-host
 
 networks:
-  web-network: {}
+  web-network:
+    driver: bridge
