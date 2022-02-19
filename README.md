@@ -1,26 +1,27 @@
-# Cache - Proof of Concept
+# Cache - Proof of Concept ![Cache](https://img.shields.io/badge/Redis-darkblue?style=plastic&logo=redis) ![Last updated](https://img.shields.io/github/last-commit/arturcampos/cache-poc/main?label=Last%20updated&style=plastic)  
 
-Proof of concept using springboot + mongoDB + redis as a mem-cache
+### Languages and tools
+
 
 ## Content of project
 This program emulates a CRUD of customers through REST APIs, using cache strategy for improving performance and avoiding Data base overloads
 
 ### Components
-- Mongo Data base (NoSQL database system)
-- Redis (NoSQL in-memory database used as cache)
-- Java 11
-- Spring Boot v2.6.0
+- ![Java11](https://img.shields.io/badge/Java11-darkgreen?style=plastic&logo=java)
+- ![SpringBoot](https://img.shields.io/badge/SpringBoot-darkgreen?style=plastic&logo=springboot) 
+- ![ApacheMaven](https://img.shields.io/badge/Apache%20Maven-darkgreen?style=plastic&logo=apachemaven) - Dependency manager
+- ![Docker](https://img.shields.io/badge/Docker-darkblue?style=plastic&logo=docker) ![Docker-Compose](https://img.shields.io/badge/Docker%20Compose-darkblue?style=plastic&logo=docker) - Containers
+- ![MongoDB](https://img.shields.io/badge/MongoDB-darkred?style=plastic&logo=mongodb) NoSQL database system
+- ![Cache](https://img.shields.io/badge/Redis-darkred?style=plastic&logo=redis) NoSQL in-memory database used as cache
 
 ## Running
-These are the pre-requirements for running this project:
-* [Docker](https://docs.docker.com/engine/install/) installed
-* [docker-compose](https://docs.docker.com/compose/install/) installed
+After cloning this repo: ⤵️
 
-First step is to compile and build code, inside the root directory of the project run:
+Compile and build code, inside the root directory of the project run: 🧰
 ```bash
-mvn clean install
+mvn clean package
 ```
-Second step is to run the environment using docker-compose:
+Run the environment using docker-compose: ⏯️
 
 - without loggin:
 ```bash
